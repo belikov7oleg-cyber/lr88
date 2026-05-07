@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+}
+
+/* Header styles */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.logout {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  position: absolute;
+  right: 0;
+}
+
+.logout:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Controls */
+.controls {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-weight: 500;
+}
+
+.controls select,
+.controls button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button {
+  background: #667eea;
+  color: white;
+  border: none;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #5a67d8;
+}
+
+/* Dataset navigation */
+.dataset-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dataset-nav strong {
+  align-self: center;
+}
+
+.dataset-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dataset-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dataset-btn.active {
+  background: #667eea;
+  color: white;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #667eea;
+  margin: 8px 0;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 13px;
+}
+
+/* Visualizations */
+.visualizations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.viz-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.viz-card h3 {
+  margin-bottom: 15px;
+  color: #333;
+  border-left: 4px solid #667eea;
+  padding-left: 12px;
+}
+
+.viz-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Comparison section */
+.comparison-section {
+  margin: 40px 0 30px 0;
+}
+
+.comparison-section h2 {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+  color: #333;
+  text-align: center;
+}
+
+/* Table styles */
+.table-container {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table-container h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.table-container > div {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th {
+  background: #667eea;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Section titles */
+h2 {
+  margin: 30px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+  color: #333;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* Loading and error states */
+.loading {
+  text-align: center;
+  padding: 50px;
+  color: #667eea;
+  font-size: 18px;
+}
+
+.error-message {
+  text-align: center;
+  padding: 50px;
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .visualizations {
+      grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dataset-btn {
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+
+  .header-content {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .logout {
+      position: static;
+      margin-top: 10px;
+  }
+}

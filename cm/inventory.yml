@@ -1,0 +1,9 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+      ansible_host: 127.0.0.1
+      project_root: "/home/runner/workspace"
+      app_name: "supercomputer-monitor"
+      app_version: "v2.0.0"
+      app_port: 8000

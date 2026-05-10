@@ -1,0 +1,30 @@
+---
+# Общие сведения о приложении
+app_name: supercomputer-monitor
+app_version: v2.0.0
+domain: supercomputer.company.ru
+
+# КЛЮЧЕВЫЕ НАСТРАИВАЕМЫЕ ПАРАМЕТРЫ
+# MAX_MSG: пороговое значение количества сообщений для статуса BLOCK
+max_msg: 1500
+
+# MAX_RATE: пороговое значение частоты обмена для статуса LIMIT
+max_rate: 100
+
+# Настройки безопасности
+debug: false
+
+# Список разрешённых хостов
+allowed_hosts:
+  - "localhost"
+  - "127.0.0.1"
+  - "*.replit.dev"
+  - "*.repl.co"
+
+# Доверенные источники для CSRF-защиты
+csrf_trusted_origins:
+  - "https://*.replit.dev"
+  - "https://*.repl.co"
+
+# Путь для сгенерированных файлов
+generated_dir: "{{ project_root }}/cm/generated"

@@ -1,0 +1,32 @@
+---
+- name: Generate configuration for Supercomputer Monitor
+  hosts: localhost
+  gather_facts: false
+  vars:
+    project_root: "/home/runner/workspace"
+
+  tasks:
+    - name: Create generated configuration directory
+      file:
+        path: "{{ project_root }}/cm/generated"
+        state: directory
+        mode: '0755'
+
+    - name: Generate .env configuration from template
+      template:
+        src: "{{ project_root }}/cm/templates/.env.j2"
+        dest: "{{ project_root }}/cm/generated/.env"
+        mode: '0600'
+
+    - name: Generate settings.py from template
+      template:
+        src: "{{ project_root }}/cm/templates/settings.py.j2"
+        dest: "{{ project_root }}/cm/generated/settings.py"
+        mode: '0644'
+
+    - name: Display configuration summary
+      debug:
+        msg:
+          - "Configuration generated at {{ project_root }}/cm/generated"
+          - "MAX_MSG = {{ max_msg }}"
+          - "App version: {{ app_version }}"
